@@ -1,0 +1,94 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 4.5rem;
+  color: black;
+}
+
+.navbrand {
+  flex: 1;
+}
+
+.brandtitle {
+  color: black;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.navlink {
+  color: black;
+  font-size: 1.2rem;
+  /* font-weight: bold; */
+}
+
+.toggler {
+  /* display: none; */
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.togglerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .toggler {
+    display: flex;
+  }
+
+  .navbar {
+    align-items: flex-start;
+    padding: 0 0 3rem;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.show {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    gap: 25px;
+    overflow: hidden;
+    animation: navtoggler 0.5s ease-in-out;
+  }
+
+  .navitem {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+}
+
+@keyframes navtoggler {
+  from {
+    margin-left: -100%;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}

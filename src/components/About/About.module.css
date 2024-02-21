@@ -1,0 +1,40 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3% 15% 7%;
+}
+
+.aboutContent {
+  width: 100%;
+}
+
+.aboutContent h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.aboutContent p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.imageContainer {
+  width: 100%;
+}
+
+.aboutImage {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 3%;
+  }
+}
