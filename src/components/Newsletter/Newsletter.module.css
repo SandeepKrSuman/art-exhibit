@@ -3,13 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3% 7% 15%;
-}
-
-.newsletter h1 {
-  font-size: 2.8rem;
-  font-weight: bold;
-  margin-bottom: 40px;
 }
 
 .container {
@@ -17,6 +10,7 @@
   height: 350px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,6 +18,8 @@
 }
 
 .container p {
+  text-align: center;
+  font-family: "Merriweather", serif;
   margin-bottom: 40px;
   font-size: 1.1rem;
 }
@@ -53,4 +49,5 @@
   width: 300px;
   max-width: 100%;
   cursor: pointer;
+  transition: background-color 1s ease;
 }

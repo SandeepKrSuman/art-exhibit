@@ -2,12 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0 4.5rem;
+  margin-bottom: 40px;
   color: black;
-}
-
-.navbrand {
-  flex: 1;
 }
 
 .brandtitle {
@@ -17,9 +13,14 @@
   font-weight: bold;
 }
 
+.brandlogo {
+  width: 2rem;
+  height: auto;
+  margin-right: 10px;
+}
+
 .nav {
   display: flex;
-  flex: 1;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
@@ -27,38 +28,73 @@
 }
 
 .navlink {
-  color: black;
+  color: #343a40;
   font-size: 1.2rem;
-  /* font-weight: bold; */
+  transition: all 0.5s ease-in-out;
 }
 
-.toggler {
-  /* display: none; */
+.navlink:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+.buttons {
   display: flex;
   justify-content: flex-end;
-  flex: 1;
+  gap: 20px;
+  align-items: center;
+}
+
+.cart,
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .togglerBtn {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   align-self: flex-end;
   background: transparent;
   border: none;
   outline: none;
-  font-size: 1.8rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 
 @media (max-width: 768px) {
-  .toggler {
+  .brandlogo {
+    display: none;
+  }
+
+  .brandtitle {
+    font-size: 1.5rem;
+  }
+
+  .navlink {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1rem;
+  }
+
+  .cart,
+  .profile {
+    font-size: 1.5rem;
+  }
+
+  .togglerBtn {
     display: flex;
+    font-size: 1.5rem;
   }
 
   .navbar {
     align-items: flex-start;
-    padding: 0 0 3rem;
   }
 
   .nav {
@@ -69,7 +105,7 @@
     display: flex;
     margin-top: 50px;
     flex-direction: column;
-    gap: 25px;
+    gap: 5px;
     overflow: hidden;
     animation: navtoggler 0.5s ease-in-out;
   }

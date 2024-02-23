@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  font-family: "Roboto", sans-serif;
+}
+
+.first {
+  font-size: 1.2rem;
+  margin-right: 15px;
+  padding: 14px;
+  border-right: 1px solid #000;
+}
+
+.second {
+  font-size: 1rem;
+}

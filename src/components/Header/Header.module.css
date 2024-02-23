@@ -2,8 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10%;
-  margin-bottom: 18%;
+  padding: 7% 0;
 }
 
 .col1,
@@ -11,12 +10,14 @@
   display: flex;
   flex-direction: column;
   width: 50%;
-  justify-content: center;
-  align-items: center;
+}
+
+.col1 {
+  gap: 10px;
 }
 
 .heading {
-  font-size: 3rem;
+  font-size: 2.8rem;
   line-height: 1.5;
 }
 
@@ -28,8 +29,10 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  padding: 0.5rem;
+  font-family: "Lato", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
   border-radius: 0.3rem;
   color: #fff;
   background-color: #343a40;
@@ -40,104 +43,65 @@
   background-color: #000;
 }
 
-.col2 {
-  position: relative;
-  height: 100%;
+.container {
+  display: inline-block;
+  align-self: flex-end;
+  width: 60%;
+  height: auto;
+  border-radius: 0.5rem;
+  background-image: url(/roompainting.jpeg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: fade 10s infinite;
 }
 
 .headerimg {
-  position: absolute;
-  align-self: flex-end;
-  width: 70%;
+  width: 100%;
+  max-width: 100%;
   border-radius: 0.5rem;
-  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
-    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  opacity: 0;
+  visibility: hidden;
 }
 
-.img1 {
-  animation: fade1 20s infinite;
-}
-.img2 {
-  animation: fade2 20s infinite;
-}
-.img3 {
-  animation: fade3 20s infinite;
-}
-.img4 {
-  animation: fade4 20s infinite;
-}
-
-@keyframes fade1 {
-  0% {
-    opacity: 1;
-  }
-  10% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes fade2 {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  35% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-@keyframes fade3 {
-  0% {
-    opacity: 0;
-  }
-  35% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0;
-  }
-}
-
-@keyframes fade4 {
-  0% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 1;
-  }
-  85% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
+@media (max-width: 890px) {
+  .container {
+    width: 85%;
   }
 }
 
 @media (max-width: 768px) {
   .header {
     display: none;
+  }
+}
+
+@keyframes fade {
+  0% {
+    background-image: url(/roompainting.jpeg);
+  }
+  25% {
+    background-image: url(/roompainting.jpeg);
+  }
+  30% {
+    background-image: url(/wallpainting.jpeg);
+  }
+  55% {
+    background-image: url(/wallpainting.jpeg);
+  }
+  60% {
+    background-image: url(/canvaspainting.jpeg);
+  }
+  85% {
+    background-image: url(/canvaspainting.jpeg);
+  }
+  90% {
+    background-image: url(/roomview.jpeg);
+  }
+  95% {
+    background-image: url(/roomview.jpeg);
+  }
+  100% {
+    background-image: url(/roomview.jpeg);
   }
 }

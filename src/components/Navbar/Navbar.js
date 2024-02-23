@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaBars, FaRegUserCircle } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { IoBagHandleOutline } from "react-icons/io5";
 import styles from "./Navbar.module.css";
@@ -11,6 +12,7 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <span className={styles.navbrand}>
         <a className={styles.brandtitle} href="/">
+          <img className={styles.brandlogo} src="/splashblack.png" alt="logo" />
           ArtExhibit
         </a>
       </span>
@@ -36,12 +38,23 @@ export default function Navbar() {
           </a>
         </li>
       </ul>
-      <span className={styles.toggler}>
+
+      <span className={styles.buttons}>
+        <a href="/bag">
+          <button className={styles.cart}>
+            <IoBagHandleOutline />
+          </button>
+        </a>
+        <a href="/profile">
+          <button className={styles.profile}>
+            <FaRegUserCircle />
+          </button>
+        </a>
         <button
           className={styles.togglerBtn}
           onClick={() => setShow((prev) => !prev)}
         >
-          {show ? <IoMdClose /> : <IoBagHandleOutline />}
+          {show ? <IoMdClose /> : <FaBars />}
         </button>
       </span>
     </nav>
