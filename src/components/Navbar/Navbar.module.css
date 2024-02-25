@@ -57,6 +57,27 @@
   cursor: pointer;
 }
 
+.cart {
+  position: relative;
+}
+
+.itemCount {
+  position: absolute;
+  bottom: -4px;
+  right: -6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  width: 0.9rem;
+  height: 0.9rem;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: #343a40;
+  border-radius: 50%;
+}
+
 .togglerBtn {
   display: none;
   align-items: center;
@@ -88,6 +109,13 @@
     font-size: 1.5rem;
   }
 
+  .itemCount {
+    padding: 5px;
+    width: 0.8rem;
+    height: 0.8rem;
+    font-size: 0.7rem;
+  }
+
   .togglerBtn {
     display: flex;
     font-size: 1.5rem;
@@ -113,9 +141,6 @@
   .navitem {
     padding: 10px;
   }
-}
-
-@media (max-width: 576px) {
 }
 
 @keyframes navtoggler {

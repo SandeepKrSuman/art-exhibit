@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { FaBars, FaRegUserCircle } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { IoBagHandleOutline } from "react-icons/io5";
@@ -43,6 +42,7 @@ export default function Navbar() {
         <a href="/bag">
           <button className={styles.cart}>
             <IoBagHandleOutline />
+            <span className={styles.itemCount}>0</span>
           </button>
         </a>
         <a href="/profile">
