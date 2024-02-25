@@ -2,10 +2,15 @@ import { useState } from "react";
 import { FaBars, FaRegUserCircle } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { IoBagHandleOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import { BagState } from "../../context/Context";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
+  const {
+    state: { bag },
+  } = BagState();
 
   return (
     <nav className={styles.navbar}>
@@ -17,39 +22,39 @@ export default function Navbar() {
       </span>
       <ul className={`${styles.nav} ${show ? styles.show : ""}`}>
         <li className={styles.navitem}>
-          <a className={styles.navlink} href="/">
+          <Link className={styles.navlink} to="/">
             Home
-          </a>
+          </Link>
         </li>
         <li className={styles.navitem}>
-          <a className={styles.navlink} href="/about">
+          <Link className={styles.navlink} to="/about">
             About
-          </a>
+          </Link>
         </li>
         <li className={styles.navitem}>
-          <a className={styles.navlink} href="/collections">
+          <Link className={styles.navlink} to="/collections">
             Collections
-          </a>
+          </Link>
         </li>
         <li className={styles.navitem}>
-          <a className={styles.navlink} href="/contact">
+          <Link className={styles.navlink} to="/contact">
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
 
       <span className={styles.buttons}>
-        <a href="/bag">
+        <Link to="/bag">
           <button className={styles.cart}>
             <IoBagHandleOutline />
-            <span className={styles.itemCount}>0</span>
+            <span className={styles.itemCount}>{bag.length}</span>
           </button>
-        </a>
-        <a href="/profile">
+        </Link>
+        <Link to="/profile">
           <button className={styles.profile}>
             <FaRegUserCircle />
           </button>
-        </a>
+        </Link>
         <button
           className={styles.togglerBtn}
           onClick={() => setShow((prev) => !prev)}

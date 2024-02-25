@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Collections from "./components/Collections/Collections";
@@ -13,21 +12,19 @@ import Login from "./components/Login/Login";
 
 export default function App() {
   return (
-    <Fragment>
+    <Router>
       <Navbar />
-      <Router>
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/about" exact element={<About />} />
-          <Route path="/collections" exact element={<Collections />} />
-          <Route path="/contact" exact element={<Contact />} />
-          <Route path="/login" exact element={<Login />} />
-          <Route path="/bag" exact element={<Bag />} />
-          <Route path="/profile" exact element={<Profile />} />
-          <Route path="/*" element={<Page404 />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/about" exact element={<About />} />
+        <Route path="/collections" exact element={<Collections />} />
+        <Route path="/contact" exact element={<Contact />} />
+        <Route path="/login" exact element={<Login />} />
+        <Route path="/bag" exact element={<Bag />} />
+        <Route path="/profile" exact element={<Profile />} />
+        <Route path="/*" element={<Page404 />} />
+      </Routes>
       <Footer />
-    </Fragment>
+    </Router>
   );
 }

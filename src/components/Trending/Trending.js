@@ -1,17 +1,21 @@
-import { data } from "../../utils/data";
 import Card from "../Card/Card";
+import { BagState } from "../../context/Context";
 import styles from "./Trending.module.css";
 
-const paintings = data.filter((painting) => painting.trending);
-
 export default function Trending() {
+  const {
+    state: { products },
+  } = BagState();
+
   return (
     <section className={styles.trending}>
       <h1>Trending Artworks</h1>
       <div className={styles.container}>
-        {paintings.map((painting, index) => (
-          <Card key={index} painting={painting} />
-        ))}
+        {products
+          .filter((p) => p.trending)
+          .map((painting, index) => (
+            <Card key={index} painting={painting} />
+          ))}
       </div>
     </section>
   );

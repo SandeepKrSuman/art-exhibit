@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 400px;
+  width: 400px;
   padding: 10px;
   border-radius: 0.3rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -39,6 +39,7 @@
 }
 
 .details .price {
+  font-family: "Lato", sans-serif;
   padding: 10px 0;
   font-size: 1rem;
   color: #000;
@@ -63,18 +64,14 @@
   cursor: pointer;
 }
 
-.stock h2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.quantity {
+  font-size: 0.9rem;
+  outline: none;
   text-align: center;
-  font-size: 1rem;
-  vertical-align: middle;
 }
 
-.decrease,
-.increase {
-  font-size: 1.5rem;
-  margin: 0 5px;
-  cursor: pointer;
+@media (max-width: 576px) {
+  .card {
+    width: 100%;
+  }
 }
