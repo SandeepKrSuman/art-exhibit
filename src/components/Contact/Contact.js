@@ -11,8 +11,21 @@ export default function Contact() {
       <div className={styles.col1}>
         <form onSubmit={handleSubmit}>
           <h2>Contact Us</h2>
-          <input type="text" placeholder="Name" autoFocus required />
-          <input type="email" placeholder="Email" required />
+          <input
+            name="name"
+            type="text"
+            placeholder="Name"
+            autoComplete="off"
+            autoFocus
+            required
+          />
+          <input
+            name="email"
+            type="email"
+            placeholder="Email"
+            autoComplete="off"
+            required
+          />
           <textarea name="message" placeholder="Message..."></textarea>
           <button>Submit</button>
         </form>

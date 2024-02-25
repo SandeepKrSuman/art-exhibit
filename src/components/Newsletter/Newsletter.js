@@ -21,7 +21,13 @@ export default function Newsletter() {
           Stay in the loop with our latest artistic offerings! Subscribe now.
         </p>
         <form onSubmit={handleSubmit}>
-          <input type="email" placeholder="Enter your email address" required />
+          <input
+            name="email"
+            type="email"
+            placeholder="Enter your email address"
+            autoComplete="off"
+            required
+          />
           <button ref={buttonRef}>Subscribe</button>
         </form>
       </div>

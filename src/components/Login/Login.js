@@ -32,6 +32,7 @@ export default function Login() {
               id="fname"
               name="fname"
               type="text"
+              autoComplete="off"
               required
               value={fname}
               onChange={(e) => setFname(e.target.value)}
@@ -41,6 +42,7 @@ export default function Login() {
               id="lname"
               name="lname"
               type="text"
+              autoComplete="off"
               required
               value={lname}
               onChange={(e) => setLname(e.target.value)}
@@ -52,6 +54,7 @@ export default function Login() {
           id="email"
           name="email"
           type="email"
+          autoComplete="on"
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}

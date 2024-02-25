@@ -29,6 +29,7 @@ export default function Profile() {
           id="fname"
           name="fname"
           type="text"
+          autoComplete="off"
           required
           value={fname}
           onChange={(e) => setFname(e.target.value)}
@@ -38,6 +39,7 @@ export default function Profile() {
           id="lname"
           name="lname"
           type="text"
+          autoComplete="off"
           required
           value={lname}
           onChange={(e) => setLname(e.target.value)}
@@ -47,6 +49,7 @@ export default function Profile() {
           id="email"
           name="email"
           type="email"
+          autoComplete="off"
           required
           disabled
           value={email}
