@@ -16,6 +16,11 @@ export const bagReducer = (state, action) => {
             : item.qty
         ),
       };
+    case "CLEAR_BAG":
+      return {
+        ...state,
+        bag: [],
+      };
     default:
       return state;
   }

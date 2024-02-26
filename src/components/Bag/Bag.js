@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { TbClearAll } from "react-icons/tb";
 import { ImSad } from "react-icons/im";
 import { FaArrowRightLong } from "react-icons/fa6";
 import BagItem from "../BagItem/BagItem";
@@ -8,6 +9,7 @@ import styles from "./Bag.module.css";
 export default function Bag() {
   const {
     state: { bag },
+    dispatch,
   } = BagState();
 
   const [bagTotal, setBagTotal] = useState();
@@ -32,6 +34,16 @@ export default function Bag() {
       ) : (
         <>
           <div className={styles.items}>
+            <button
+              className={styles.clearBag}
+              onClick={() =>
+                dispatch({
+                  type: "CLEAR_BAG",
+                })
+              }
+            >
+              <TbClearAll /> Clear Bag
+            </button>
             {bag.map((painting, index) => (
               <BagItem key={index} painting={painting} />
             ))}
