@@ -16,7 +16,9 @@ export default function BagItem({ painting }) {
       <div className={styles.details}>
         <h2>{painting.title}</h2>
         <p>{`by ${painting.artist}`}</p>
-        <p className={styles.price}>{`₹ ${painting.price}`}</p>
+        <p className={styles.price}>{`₹ ${
+          painting.price - (painting.price * painting.discount) / 100
+        }`}</p>
       </div>
       <div className={styles.stock}>
         <button
