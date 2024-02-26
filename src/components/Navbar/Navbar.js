@@ -22,22 +22,38 @@ export default function Navbar() {
       </span>
       <ul className={`${styles.nav} ${show ? styles.show : ""}`}>
         <li className={styles.navitem}>
-          <Link className={styles.navlink} to="/">
+          <Link
+            className={styles.navlink}
+            to="/"
+            onClick={() => setShow(false)}
+          >
             Home
           </Link>
         </li>
         <li className={styles.navitem}>
-          <Link className={styles.navlink} to="/about">
+          <Link
+            className={styles.navlink}
+            to="/about"
+            onClick={() => setShow(false)}
+          >
             About
           </Link>
         </li>
         <li className={styles.navitem}>
-          <Link className={styles.navlink} to="/collections">
+          <Link
+            className={styles.navlink}
+            to="/collections"
+            onClick={() => setShow(false)}
+          >
             Collections
           </Link>
         </li>
         <li className={styles.navitem}>
-          <Link className={styles.navlink} to="/contact">
+          <Link
+            className={styles.navlink}
+            to="/contact"
+            onClick={() => setShow(false)}
+          >
             Contact
           </Link>
         </li>
