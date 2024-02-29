@@ -1,4 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { AuthState } from "./context/AuthContext";
 import Home from "./components/Home/Home";
 import Collections from "./components/Collections/Collections";
 import About from "./components/About/About";
@@ -11,6 +17,10 @@ import Profile from "./components/Profile/Profile";
 import Login from "./components/Login/Login";
 
 export default function App() {
+  const {
+    state: { isLogin },
+  } = AuthState();
+
   return (
     <Router>
       <Navbar />
@@ -19,9 +29,21 @@ export default function App() {
         <Route path="/about" exact element={<About />} />
         <Route path="/collections" exact element={<Collections />} />
         <Route path="/contact" exact element={<Contact />} />
-        <Route path="/login" exact element={<Login />} />
-        <Route path="/bag" exact element={<Bag />} />
-        <Route path="/profile" exact element={<Profile />} />
+        <Route
+          path="/login"
+          exact
+          element={isLogin ? <Navigate to="/" /> : <Login />}
+        />
+        <Route
+          path="/bag"
+          exact
+          element={isLogin ? <Bag /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/profile"
+          exact
+          element={isLogin ? <Profile /> : <Navigate to="/login" />}
+        />
         <Route path="/*" element={<Page404 />} />
       </Routes>
       <Footer />

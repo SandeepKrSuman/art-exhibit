@@ -1,9 +1,17 @@
+import { useRef } from "react";
 import styles from "./Contact.module.css";
 
 export default function Contact() {
+  const btnref = useRef(null);
+
   const handleSubmit = (event) => {
-    console.log("submit");
     event.preventDefault();
+
+    const button = btnref.current;
+    button.textContent = "Message Sent!";
+    button.style.backgroundColor = "#65B741";
+    button.disabled = true;
+    button.style.cursor = "not-allowed";
   };
 
   return (
@@ -27,7 +35,7 @@ export default function Contact() {
             required
           />
           <textarea name="message" placeholder="Message..."></textarea>
-          <button>Submit</button>
+          <button ref={btnref}>Send Message</button>
         </form>
       </div>
       <div className={styles.col2}>

@@ -1,13 +1,10 @@
 import { IoBagAddOutline, IoBagRemoveOutline } from "react-icons/io5";
 import { FaArrowTrendUp } from "react-icons/fa6";
-import { BagState } from "../../context/Context";
+import { BagState } from "../../context/BagContext";
 import styles from "./Card.module.css";
 
 export default function Card({ painting }) {
-  const {
-    state: { bag },
-    dispatch,
-  } = BagState();
+  const { bag, bagDispatch } = BagState();
 
   return (
     <div className={styles.card}>
@@ -36,7 +33,7 @@ export default function Card({ painting }) {
               <button
                 className={styles.addToBagBtn}
                 onClick={() =>
-                  dispatch({
+                  bagDispatch({
                     type: "REMOVE_FROM_BAG",
                     payload: painting,
                   })
@@ -48,7 +45,7 @@ export default function Card({ painting }) {
               <button
                 className={styles.addToBagBtn}
                 onClick={() =>
-                  dispatch({
+                  bagDispatch({
                     type: "ADD_TO_BAG",
                     payload: painting,
                   })

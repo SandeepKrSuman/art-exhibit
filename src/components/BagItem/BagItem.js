@@ -1,9 +1,9 @@
 import { MdDelete } from "react-icons/md";
-import { BagState } from "../../context/Context";
+import { BagState } from "../../context/BagContext";
 import styles from "./BagItem.module.css";
 
 export default function BagItem({ painting }) {
-  const { dispatch } = BagState();
+  const { bagDispatch } = BagState();
 
   return (
     <div className={styles.card}>
@@ -23,7 +23,7 @@ export default function BagItem({ painting }) {
       <div className={styles.stock}>
         <button
           onClick={() =>
-            dispatch({
+            bagDispatch({
               type: "REMOVE_FROM_BAG",
               payload: painting,
             })
@@ -33,7 +33,7 @@ export default function BagItem({ painting }) {
         </button>
         <select
           onChange={(e) =>
-            dispatch({
+            bagDispatch({
               type: "CHANGE_ITEM_QTY",
               payload: {
                 id: painting.id,

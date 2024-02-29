@@ -3,14 +3,12 @@ import { FaBars, FaRegUserCircle } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { BagState } from "../../context/Context";
+import { BagState } from "../../context/BagContext";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const [show, setShow] = useState(false);
-  const {
-    state: { bag },
-  } = BagState();
+  const { bag } = BagState();
 
   return (
     <nav className={styles.navbar}>

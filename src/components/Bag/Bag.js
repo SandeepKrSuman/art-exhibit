@@ -3,14 +3,11 @@ import { TbClearAll } from "react-icons/tb";
 import { ImSad } from "react-icons/im";
 import { FaArrowRightLong } from "react-icons/fa6";
 import BagItem from "../BagItem/BagItem";
-import { BagState } from "../../context/Context";
+import { BagState } from "../../context/BagContext";
 import styles from "./Bag.module.css";
 
 export default function Bag() {
-  const {
-    state: { bag },
-    dispatch,
-  } = BagState();
+  const { bag, bagDispatch } = BagState();
 
   const [bagTotal, setBagTotal] = useState();
 
@@ -37,7 +34,7 @@ export default function Bag() {
             <button
               className={styles.clearBag}
               onClick={() =>
-                dispatch({
+                bagDispatch({
                   type: "CLEAR_BAG",
                 })
               }

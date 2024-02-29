@@ -1,0 +1,55 @@
+.skcard {
+  display: inline-block;
+  width: 250px;
+  box-shadow: 0 2px 7px #dfdfdf;
+}
+
+.skthumbnail {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 250px;
+}
+
+.skdetails {
+  padding: 10px;
+  text-align: center;
+}
+
+.skdetails h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.skdetails p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.skfoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.skprice {
+  width: 50%;
+  font-size: 1.2rem;
+}
+
+.skbag {
+  font-size: 1.3rem;
+}
+
+button {
+  margin-left: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
