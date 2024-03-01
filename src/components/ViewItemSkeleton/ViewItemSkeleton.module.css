@@ -1,0 +1,31 @@
+.iskitemview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.iskimages {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.iskmultiImg {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.iskdetails {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

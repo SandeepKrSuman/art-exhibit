@@ -1,0 +1,141 @@
+.itemview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.images {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.singleImg {
+  width: 80%;
+  padding: 3px;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.singleImg img {
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.multiImg img {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 0.3rem;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  cursor: pointer;
+}
+
+.details {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Lato", sans-serif;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.rating {
+  font-size: 1rem;
+  color: #b4b4b8;
+}
+
+.rating span {
+  color: #ffc436;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin: 0 2px;
+}
+
+.price {
+  font-size: 1.2rem;
+  text-decoration: line-through;
+}
+
+.offerPrice {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+.description::first-letter {
+  text-transform: uppercase;
+}
+
+.icons {
+  height: 100px;
+  background-color: #f5f7f8;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.icons > span {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.icons > span span {
+  font-size: 1.8rem;
+}
+
+.stock {
+  font-size: 1.3rem;
+}
+
+.artist {
+  font-size: 1rem;
+}
+
+.addToBagBtn {
+  border: none;
+  outline: none;
+  background-color: #343a40;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.2rem;
+  max-width: 250px;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.addToBagBtn:hover {
+  background-color: #000;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .itemview {
+    flex-direction: column;
+  }
+
+  .images,
+  .details {
+    width: 100%;
+  }
+}

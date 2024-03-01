@@ -1,15 +1,24 @@
 import { IoBagAddOutline, IoBagRemoveOutline } from "react-icons/io5";
 import { IoMdStar } from "react-icons/io";
 import { FaArrowTrendUp } from "react-icons/fa6";
+import { useNavigate, createSearchParams } from "react-router-dom";
 import { BagState } from "../../context/BagContext";
 import styles from "./Card.module.css";
 
 export default function Card({ painting }) {
+  const navigate = useNavigate();
   const { bag, bagDispatch } = BagState();
+
+  const handleClick = () => {
+    navigate({
+      pathname: "/collections/item",
+      search: `?${createSearchParams({ id: painting.id })}`,
+    });
+  };
 
   return (
     <div className={styles.card}>
-      <div className={styles.thumbnail}>
+      <div className={styles.thumbnail} onClick={handleClick}>
         {painting.trending && (
           <div className={styles.badge} title="trending">
             <FaArrowTrendUp />

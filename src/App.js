@@ -7,6 +7,7 @@ import {
 import { AuthState } from "./context/AuthContext";
 import Home from "./components/Home/Home";
 import Collections from "./components/Collections/Collections";
+import ViewItem from "./components/ViewItem/ViewItem";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Navbar from "./components/Navbar/Navbar";
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="/about" exact element={<About />} />
         <Route path="/collections" exact element={<Collections />} />
+        <Route path="/collections/item" exact element={<ViewItem />} />
         <Route path="/contact" exact element={<Contact />} />
         <Route
           path="/login"

@@ -86,6 +86,10 @@ const api = {
   getProducts: () => {
     return axios.get(`${baseUrl}/products`);
   },
+
+  getSingleProduct: (body) => {
+    return axios.post(`${baseUrl}/products/single`, body);
+  },
 };
 
 export default api;
