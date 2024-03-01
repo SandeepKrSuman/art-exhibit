@@ -1,4 +1,5 @@
 import { IoBagAddOutline, IoBagRemoveOutline } from "react-icons/io5";
+import { IoMdStar } from "react-icons/io";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { BagState } from "../../context/BagContext";
 import styles from "./Card.module.css";
@@ -15,6 +16,12 @@ export default function Card({ painting }) {
           </div>
         )}
         <img src={`/assets/${painting.thumbnail}.jpeg`} alt="product" />
+        {painting.stock > 0 && (
+          <div className={styles.rating}>
+            {`${painting.rating.star}`}
+            <IoMdStar />
+          </div>
+        )}
         {painting.stock === 0 && (
           <div className={styles.outOfStock}>out of stock</div>
         )}

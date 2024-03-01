@@ -6,7 +6,7 @@ export default function Contact() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    event.target.reset();
     const button = btnref.current;
     button.textContent = "Message Sent!";
     button.style.backgroundColor = "#65B741";

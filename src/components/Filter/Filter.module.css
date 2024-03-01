@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Lato", sans-serif;
+  gap: 30px;
+  padding: 20px;
+  background-color: #f5f7f8;
+  border-radius: 0.5rem;
+  position: sticky;
+  top: 30px;
+}
+
+.container h5 {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  gap: 5px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filters .search,
+.filters .category,
+.clearbtn {
+  font-size: 1rem;
+  padding: 8px;
+  outline: none;
+  border: 1px solid #b4b4b8;
+  border-radius: 0.3rem;
+}
+
+.filters label {
+  font-size: 1rem;
+  margin-left: 8px;
+}
+
+.filters input[type="radio"],
+.filters input[type="checkbox"] {
+  accent-color: #232323;
+}
+
+/* ------ Star rating (https://github.com/mukulkant/Star-rating-using-pure-css) ------- */
+
+.rate {
+  float: left;
+  vertical-align: middle;
+  border: 1px solid #b4b4b8;
+  border-radius: 0.2rem;
+  padding: 0 2px;
+  background-color: #fff;
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: #ccc;
+}
+.rate:not(:checked) > label:before {
+  content: "★ ";
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+/* ------------- */
+
+.clearbtn {
+  cursor: pointer;
+  background-color: #fff;
+  margin-top: 8px;
+}
+
+@media (max-width: 880px) {
+  .container {
+    display: none;
+  }
+}

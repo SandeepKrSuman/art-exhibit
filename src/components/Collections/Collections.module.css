@@ -1,7 +1,37 @@
 .collections {
   display: flex;
+  gap: 20px;
+}
+
+.col2 {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
+}
+
+.col1 {
+  width: 25%;
+}
+
+.col2 {
+  width: 75%;
+}
+
+@media (max-width: 711px), (min-width: 1600px) {
+  .collections {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 880px) {
+  .collections {
+    flex-direction: column;
+  }
+
+  .col1,
+  .col2 {
+    width: 100%;
+  }
 }

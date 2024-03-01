@@ -9,6 +9,7 @@ import styles from "./Profile.module.css";
 export default function Profile() {
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -22,15 +23,19 @@ export default function Profile() {
   useEffect(() => {
     const getUser = async () => {
       try {
+        setLoading(true);
         const res = await api.findUser();
         if (res.data.error) {
           toast.error(res.data.errorMsg);
+          setLoading(false);
         } else {
           setFname(res.data.fname);
           setLname(res.data.lname);
           setEmail(res.data.email);
+          setLoading(false);
         }
       } catch (error) {
+        setLoading(false);
         console.error(error);
         toast.error(error?.response?.data?.errorMsg || "Something went wrong!");
       }
@@ -83,7 +88,7 @@ export default function Profile() {
 
   return (
     <section className={styles.profile}>
-      {isLoading ? (
+      {isLoading || loading ? (
         <Skeleton width={"80vw"} height={300} />
       ) : (
         <>

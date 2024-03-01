@@ -58,6 +58,8 @@
   gap: 40px;
   background-color: #f5f7f8;
   border-radius: 0.5rem;
+  position: sticky;
+  top: 30px;
 }
 
 .container .bill {

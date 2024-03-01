@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import toast from "react-hot-toast";
 import { productsReducer } from "../reducers/productsReducer";
+import { filterReducer } from "../reducers/filterReducer";
 import api from "../api";
 
 const ProdContext = createContext();
@@ -9,6 +10,14 @@ export default function ProductsContext({ children }) {
   const [state, productsDispatch] = useReducer(productsReducer, {
     isLoading: false,
     products: [],
+  });
+
+  const [filterState, filterDispatch] = useReducer(filterReducer, {
+    searchQuery: "",
+    category: "",
+    price: "",
+    outofstock: false,
+    rating: 0,
   });
 
   const getProducts = async () => {
@@ -34,7 +43,9 @@ export default function ProductsContext({ children }) {
   }, []);
 
   return (
-    <ProdContext.Provider value={{ state, productsDispatch }}>
+    <ProdContext.Provider
+      value={{ state, productsDispatch, filterState, filterDispatch }}
+    >
       {children}
     </ProdContext.Provider>
   );

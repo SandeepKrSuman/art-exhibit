@@ -12,7 +12,7 @@ export default function Featured() {
     <section className={styles.featured}>
       <h1>Featured Collections</h1>
       <div className={styles.container}>
-        {isLoading && <CardSkeleton cardCount={3} />}
+        {isLoading && <CardSkeleton cardCount={4} />}
         {products
           .filter((p) => p.featured)
           .map((painting, index) => (

@@ -12,7 +12,7 @@ export default function Trending() {
     <section className={styles.trending}>
       <h1>Trending Artworks</h1>
       <div className={styles.container}>
-        {isLoading && <CardSkeleton cardCount={3} />}
+        {isLoading && <CardSkeleton cardCount={4} />}
         {products
           .filter((p) => p.trending)
           .map((painting, index) => (

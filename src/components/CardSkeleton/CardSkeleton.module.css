@@ -1,6 +1,6 @@
 .skcard {
   display: inline-block;
-  width: 250px;
+  width: 200px;
   box-shadow: 0 2px 7px #dfdfdf;
 }
 
@@ -9,8 +9,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
 }
 
 .skdetails {
@@ -19,7 +19,7 @@
 }
 
 .skdetails h4 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   display: block;
   margin-bottom: 10px;
@@ -48,8 +48,34 @@
   font-size: 1.3rem;
 }
 
-button {
-  margin-left: 5px;
-  font-size: 1.5rem;
-  font-weight: bold;
+@media (max-width: 711px), (min-width: 1600px) {
+  .skcard {
+    width: 250px;
+  }
+
+  .skthumbnail {
+    width: 250px;
+    height: 250px;
+  }
+
+  .skdetails h4 {
+    font-size: 1.3rem;
+  }
+
+  .skdetails p {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+  }
+
+  .skfoot {
+    gap: 30px;
+    padding-top: 20px;
+  }
+
+  .skprice {
+    font-size: 1.1rem;
+  }
+  .skbag {
+    font-size: 1.5rem;
+  }
 }
