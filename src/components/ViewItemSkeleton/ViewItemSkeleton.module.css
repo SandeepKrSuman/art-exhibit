@@ -29,3 +29,14 @@
   flex-direction: column;
   gap: 20px;
 }
+
+@media (max-width: 768px) {
+  .iskitemview {
+    flex-direction: column;
+  }
+
+  .iskimages,
+  .iskdetails {
+    width: 100%;
+  }
+}
